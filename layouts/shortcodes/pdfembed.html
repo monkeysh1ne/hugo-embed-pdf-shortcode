@@ -1,0 +1,8 @@
+{{ $url := .Get "src" }} {{ if not $url }}
+<p>
+  <strong>Error:</strong> PDF URL is required. Usage: {{< pdfembed
+  src="path/to/file.pdf" >}}
+</p>
+{{ else }}
+<embed src="{{ $url }}" type="application/pdf" width="100%" height="600px" />
+{{ end }}
